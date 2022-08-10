@@ -44,4 +44,3 @@ class PostsController < ApplicationController
     redirect_to posts_index_url
   end
   
-end

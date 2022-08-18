@@ -15,9 +15,11 @@ class UsersController < ApplicationController
     @user = User.new(
       name: params[:name], 
       email: params[:email], 
+      password: params[:password],
       image: "default.png",
       )
     if @user.save
+      session[:user_id] = @user.id
       flash[:notice] = 'ユーザーを新規登録しました！'
       redirect_to user_url @user
     else

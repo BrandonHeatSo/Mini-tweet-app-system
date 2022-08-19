@@ -75,7 +75,7 @@ class UsersController < ApplicationController
     redirect_to login_url
   end
   
-  def limittaion_correct_user
+  def limitation_correct_user
     unless @current_user.id == params[:id].to_i
       flash[:notice] = "他のユーザーの編集はできません。"
       redirect_to posts_index_url
